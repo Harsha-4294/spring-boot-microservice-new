@@ -52,7 +52,7 @@ public class OrderService {
                 .block();
 
         boolean allProductsInStock = Arrays.stream(inventoryResponsArray)
-                .allMatch(InventoryResponse::isInStock);
+                .allMatch(InventoryResponse::getIsInStock);
 
         if (allProductsInStock){
             orderRepository.save(order);

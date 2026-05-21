@@ -15,13 +15,13 @@ public class InventoryController {
 
     private final InventoryService inventoryService;
 
-    //http://localhost:8082/api/inventory/iphone-13,iphone13-red
+    //http://localhost:8082/api/inventory/iphone_13,iphone_13_red
 
-    //http://localhost:8082/api/inventory?skuCodes=iphone-13&skuCodes=iphone13-red
+    //http://localhost:8082/api/inventory?skuCodes=iphone_13&skuCodes=iphone_13_red
 
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
-    public List<InventoryResponse> isInStock(@RequestParam List<String> skuCode) {
-        return inventoryService.isInStock(skuCode);
+    public List<InventoryResponse> isInStock(@RequestParam List<String> skuCodes) {
+        return inventoryService.isInStock(skuCodes);
     }
 }
